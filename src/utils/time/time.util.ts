@@ -1,10 +1,9 @@
 import { Moment } from 'moment'
-import * as moment from 'moment-timezone'
+import * as moment from 'moment'
 
 import { willDatesCollide, getInitialMomentDate } from '../date/date.util'
 import { VTimeEvent } from '../../models/time'
 import { convertTimeEventToDateEvent } from '../date-time/conversion.util'
-
 
 export const TIME_WITH_TIMEZONE_FORMAT = 'HH:mm:ssZ'
 

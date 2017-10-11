@@ -1,4 +1,4 @@
-import * as moment from 'moment-timezone'
+import * as moment from 'moment'
 import { VDateEvent } from '../../models/date'
 
 export function convertStringToNumber(date: string): number {

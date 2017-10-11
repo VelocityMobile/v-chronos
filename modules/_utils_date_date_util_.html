@@ -909,14 +909,20 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+			<a href="_utils_date_date_util_.html#moment" class="tsd-kind-icon">moment</a>
+		</li>
 		<li class=" tsd-kind-function tsd-parent-kind-external-module">
 			<a href="_utils_date_date_util_.html#convertstringtonumber" class="tsd-kind-icon">convert<wbr>String<wbr>ToNumber</a>
 		</li>
 		<li class=" tsd-kind-function tsd-parent-kind-external-module">
-			<a href="_utils_date_date_util_.html#iscollision" class="tsd-kind-icon">is<wbr>Collision</a>
+			<a href="_utils_date_date_util_.html#getinitialmomentdate" class="tsd-kind-icon">get<wbr>Initial<wbr>Moment<wbr>Date</a>
 		</li>
 		<li class=" tsd-kind-function tsd-parent-kind-external-module">
-			<a href="_utils_date_date_util_.html#isinrange" class="tsd-kind-icon">is<wbr>InRange</a>
+			<a href="_utils_date_date_util_.html#isindaterange" class="tsd-kind-icon">is<wbr>InDate<wbr>Range</a>
+		</li>
+		<li class=" tsd-kind-function tsd-parent-kind-external-module">
+			<a href="_utils_date_date_util_.html#willdatescollide" class="tsd-kind-icon">will<wbr>Dates<wbr>Collide</a>
 		</li>
 	</ul>
 </nav>
@@ -926,15 +932,35 @@ img { max-width: 100%; }
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
+					<section class="tsd-index-section tsd-is-not-exported">
+						<h3>Variables</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_utils_date_date_util_.html#moment" class="tsd-kind-icon">moment</a></li>
+						</ul>
+					</section>
 					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_utils_date_date_util_.html#convertstringtonumber" class="tsd-kind-icon">convert<wbr>String<wbr>ToNumber</a></li>
-							<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_utils_date_date_util_.html#iscollision" class="tsd-kind-icon">is<wbr>Collision</a></li>
-							<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_utils_date_date_util_.html#isinrange" class="tsd-kind-icon">is<wbr>InRange</a></li>
+							<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_utils_date_date_util_.html#getinitialmomentdate" class="tsd-kind-icon">get<wbr>Initial<wbr>Moment<wbr>Date</a></li>
+							<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_utils_date_date_util_.html#isindaterange" class="tsd-kind-icon">is<wbr>InDate<wbr>Range</a></li>
+							<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_utils_date_date_util_.html#willdatescollide" class="tsd-kind-icon">will<wbr>Dates<wbr>Collide</a></li>
 						</ul>
 					</section>
 				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<h2>Variables</h2>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+				<a name="moment" class="tsd-anchor"></a>
+				<h3>moment</h3>
+				<div class="tsd-signature tsd-kind-icon">moment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;moment&#x27;)</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/VelocityMobile/v-chronos/blob/3610bd4/src/utils/date/date.util.ts#L1">utils/date/date.util.ts:1</a></li>
+					</ul>
+				</aside>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
@@ -949,7 +975,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/VelocityMobile/v-chronos/blob/21bb236/src/utils/date/date.util.ts#L5">utils/date/date.util.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/VelocityMobile/v-chronos/blob/3610bd4/src/utils/date/date.util.ts#L4">utils/date/date.util.ts:4</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -963,42 +989,39 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-				<a name="iscollision" class="tsd-anchor"></a>
-				<h3>is<wbr>Collision</h3>
+				<a name="getinitialmomentdate" class="tsd-anchor"></a>
+				<h3>get<wbr>Initial<wbr>Moment<wbr>Date</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Collision<span class="tsd-signature-symbol">(</span>eventOne<span class="tsd-signature-symbol">: </span><a href="../interfaces/_models_event_.vevent.html" class="tsd-signature-type">VEvent</a>, eventTwo<span class="tsd-signature-symbol">: </span><a href="../interfaces/_models_event_.vevent.html" class="tsd-signature-type">VEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Initial<wbr>Moment<wbr>Date<span class="tsd-signature-symbol">(</span>momentObject<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/VelocityMobile/v-chronos/blob/21bb236/src/utils/date/date.util.ts#L9">utils/date/date.util.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/VelocityMobile/v-chronos/blob/3610bd4/src/utils/date/date.util.ts#L18">utils/date/date.util.ts:18</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>eventOne: <a href="../interfaces/_models_event_.vevent.html" class="tsd-signature-type">VEvent</a></h5>
-							</li>
-							<li>
-								<h5>eventTwo: <a href="../interfaces/_models_event_.vevent.html" class="tsd-signature-type">VEvent</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> momentObject: <span class="tsd-signature-type">any</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-				<a name="isinrange" class="tsd-anchor"></a>
-				<h3>is<wbr>InRange</h3>
+				<a name="isindaterange" class="tsd-anchor"></a>
+				<h3>is<wbr>InDate<wbr>Range</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>InRange<span class="tsd-signature-symbol">(</span>startDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, endDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<li class="tsd-signature tsd-kind-icon">is<wbr>InDate<wbr>Range<span class="tsd-signature-symbol">(</span>startDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, endDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/VelocityMobile/v-chronos/blob/21bb236/src/utils/date/date.util.ts#L14">utils/date/date.util.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/VelocityMobile/v-chronos/blob/3610bd4/src/utils/date/date.util.ts#L13">utils/date/date.util.ts:13</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1011,6 +1034,32 @@ img { max-width: 100%; }
 							</li>
 							<li>
 								<h5>date: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+				<a name="willdatescollide" class="tsd-anchor"></a>
+				<h3>will<wbr>Dates<wbr>Collide</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+					<li class="tsd-signature tsd-kind-icon">will<wbr>Dates<wbr>Collide<span class="tsd-signature-symbol">(</span>eventOne<span class="tsd-signature-symbol">: </span><a href="../interfaces/_models_date_.vdateevent.html" class="tsd-signature-type">VDateEvent</a>, eventTwo<span class="tsd-signature-symbol">: </span><a href="../interfaces/_models_date_.vdateevent.html" class="tsd-signature-type">VDateEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/VelocityMobile/v-chronos/blob/3610bd4/src/utils/date/date.util.ts#L8">utils/date/date.util.ts:8</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>eventOne: <a href="../interfaces/_models_date_.vdateevent.html" class="tsd-signature-type">VDateEvent</a></h5>
+							</li>
+							<li>
+								<h5>eventTwo: <a href="../interfaces/_models_date_.vdateevent.html" class="tsd-signature-type">VDateEvent</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>

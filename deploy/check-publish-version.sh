@@ -1,7 +1,6 @@
-#!/bin/bash
+# !/bin/bash
 
 # This script confirms that the version we have now doesn't already exist in npm
-
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 CYAN='\033[0;36m'

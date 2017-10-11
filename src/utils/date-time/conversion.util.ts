@@ -10,18 +10,13 @@ export function convertTimeEventToDateEvent({ start, end }: VTimeEvent): VDateEv
   const startTimeMoment = convertTimeToMoment(start)
   const endTimeMoment = convertTimeToMoment(end)
   const startDate = convertTimeToDate(start)
-
-  let endDate: string
-
-  if (!startTimeMoment.isBefore(endTimeMoment)) {
-    endDate = convertTimeToDate(end, true)
-  } else {
-    endDate = convertTimeToDate(end)
-  }
+  const isMultipleDays = startTimeMoment.isAfter(endTimeMoment)
+  const endDate = convertTimeToDate(end, isMultipleDays)
 
   return {
     start: startDate,
-    end: endDate
+    end: endDate,
+    isMultipleDays
   }
 }
 

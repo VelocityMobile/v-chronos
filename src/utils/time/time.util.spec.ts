@@ -37,4 +37,26 @@ describe('willTimesCollide', () => {
     }
     expect(timeUtil.willTimesCollide(event1, event2)).toBe(true)
   })
+  it('Events from 11-1am and 12:30am-2am London Summertime shoud collide', () => {
+    event1 = {
+      start: '23:00:00+01:00',
+      end: '01:00:00+01:00'
+    }
+    event2 = {
+      start: '00:30:00+01:00',
+      end: '02:00:00+01:00'
+    }
+    expect(timeUtil.willTimesCollide(event1, event2)).toBe(true)
+  })
+  it('Events from 12:30am-2am and 11-1am London Summertime shoud collide', () => {
+    event2 = {
+      start: '23:00:00+01:00',
+      end: '01:00:00+01:00'
+    }
+    event1 = {
+      start: '00:30:00+01:00',
+      end: '02:00:00+01:00'
+    }
+    expect(timeUtil.willTimesCollide(event1, event2)).toBe(true)
+  })
 })

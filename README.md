@@ -1,5 +1,6 @@
 
 ## V Chronos
+[![CircleCI](https://circleci.com/gh/VelocityMobile/v-chronos.svg?style=svg)](https://circleci.com/gh/VelocityMobile/v-chronos)
 
 Velocity's fast date-time calculation and parsing library
 

@@ -16,6 +16,7 @@
     "type": "git",
     "url": "https://github.com/VelocityMobile/v-chronos.git"
   },
+  "homepage": "https://velocitymobile.github.io/v-chronos",
   "license": "MIT",
   "engines": {
     "node": ">=6.0.0"
@@ -25,6 +26,7 @@
     "lint": "tslint --type-check --project ./tools/tsconfig.spec.json",
     "lint:watch": "chokidar --silent --initial \"src/**/*.ts\" -c \"npm run lint -- --force\"",
     "prebuild": "rimraf dist",
+    "prepublish": "npm run package",
     "build:typedoc": "typedoc --out dist/docs --target es6 --theme minimal src",
     "build:typedoc-local": "typedoc --out docs --target es6 --theme minimal src",
     "build": "tsc && rollup -c && rimraf out-tsc/main && npm run build:typedoc && npm run build:typedoc-local",

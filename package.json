@@ -1,0 +1,74 @@
+{
+  "name": "v-chronos",
+  "version": "0.0.1",
+  "description": "A pure and fast date-time calculation and parsing library",
+  "keywords": [],
+  "main": "dist/v-chronos.umd.js",
+  "module": "dist/v-chronos.es5.js",
+  "typings": "dist/types/v-chronos.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": [
+    "Evan Gillogley <evanjmg@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VelocityMobile/v-chronos.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "clean": "npm prune && rimraf dist",
+    "lint": "tslint --type-check --project ./tools/tsconfig.spec.json",
+    "lint:watch": "chokidar --silent --initial \"src/**/*.ts\" -c \"npm run lint -- --force\"",
+    "prebuild": "rimraf dist",
+    "build": "tsc && rollup -c && rimraf out-tsc/main && typedoc --out dist/docs --target es6 --theme minimal src",
+    "test": "./node_modules/nyc/bin/nyc.js ./node_modules/ts-node/dist/bin.js --project tools/tsconfig.spec.json ./node_modules/jasmine/bin/jasmine.js  --config=tools/jasmine.json",
+    "test:watch": "chokidar --silent --initial \"src/**/*.ts\" -c \"npm run test\"",
+    "watch": "concurrently -r 'npm run test:watch' 'npm run lint:watch'",
+    "package": "npm run lint && npm run test && npm run build"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "exclude": [
+      "src/**/*.d.ts",
+      "src/**/*.spec.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.6.0",
+    "@types/node": "^8.0.0",
+    "chokidar": "1.7.0",
+    "chokidar-cli": "1.2.0",
+    "concurrently": "3.5.0",
+    "jasmine": "^2.8.0",
+    "nyc": "^11.2.1",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "source-map-support": "^0.4.18",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.4.3",
+    "tslint-eslint-rules": "^4.1.1",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.3.4"
+  },
+  "dependencies": {
+    "@types/ramda": "0.24.16",
+    "moment": "2.18.1",
+    "ramda": "0.25.0"
+  }
+}

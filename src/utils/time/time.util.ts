@@ -1,5 +1,5 @@
 import { Moment } from 'moment'
-import * as moment from 'moment'
+const moment = require('moment')
 
 import { willDatesCollide, getInitialMomentDate } from '../date/date.util'
 import { VTimeEvent } from '../../models/time'

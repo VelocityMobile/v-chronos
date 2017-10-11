@@ -3,10 +3,10 @@ import commonjs from "rollup-plugin-commonjs"
 import sourceMaps from "rollup-plugin-sourcemaps"
 const pkg = require("./package.json")
 
-const libraryName = "ts-lib-template"
+const libraryName = "v-chronos"
 
 export default {
-  input: 'out-tsc/main/ts-lib-template.js',
+  input: 'out-tsc/main/v-chronos.js',
   output: [
     { file: pkg.main, name: 'ts-lib-template', format: "umd" },
     { file: pkg.module, format: "es" }

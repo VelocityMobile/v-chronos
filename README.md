@@ -13,30 +13,15 @@ Velocity's fast date-time calculation and parsing library
 $ npm install
 ```
 
-## Scripts
+## Development
 
 ```bash
 $ npm run lint
 $ npm run test
-$ npm run package
+$ npm run watch
 ```
-
-## Publish To Private Repository
-
-* Add your scope to the name in ```package.json``` e.g. ```@myorgscope/my-library-name```
-* Configure Nexus3 repository (or similar repositories with @scope support)
-
-```bash
-$ npm config set @myorgscope:registry http://myorgsrepo.com/repository/npm-hosted
-$ npm version patch
-$ npm publish
-```
-
-
-
 
 ## Dev Dependencies
-
 - typescript (ALv2 https://github.com/Microsoft/TypeScript)
 - tslint for static analysis (ALv2 https://github.com/palantir/tslint)
 - jasmine for tests (MIT https://github.com/jasmine/jasmine)

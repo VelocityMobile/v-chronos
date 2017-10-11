@@ -1,6 +1,6 @@
 {
   "name": "v-chronos",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A pure and fast date-time calculation and parsing library",
   "keywords": [],
   "main": "dist/v-chronos.umd.js",

@@ -3,7 +3,7 @@
 
 Velocity's fast date-time calculation and parsing library
 
-## Dependencies (working to remove them)
+## Runtime Dependencies (working to remove them)
 - ramda
 - moment
 
@@ -32,9 +32,8 @@ $ npm version patch
 $ npm publish
 ```
 
-## Runtime Dependencies
 
-NONE. This is an empty module
+
 
 ## Dev Dependencies
 

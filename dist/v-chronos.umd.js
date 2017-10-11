@@ -19,13 +19,43 @@ function isInDateRange(startDate, endDate, date) {
 function getInitialMomentDate(momentObject) {
     return moment(momentObject).clone().month(0).year(1971).date(1);
 }
+function addOneDay(date) {
+    return moment(date).add(1, 'day').toISOString();
+}
+function addDayToDateEvent(dateEvent) {
+    return {
+        start: addOneDay(dateEvent.start),
+        end: addOneDay(dateEvent.end)
+    };
+}
 
+var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 var moment$2 = require('moment');
 var TIME_WITH_TIMEZONE_FORMAT = 'HH:mm:ssZ';
 function willTimesCollide(event1, event2) {
     var dateEvent1 = convertTimeEventToDateEvent(event1);
     var dateEvent2 = convertTimeEventToDateEvent(event2);
+    if (dateEvent2.isMultipleDays && dateEvent1.isMultipleDays) {
+        return willDatesCollide(dateEvent1, dateEvent2);
+    }
+    else if (dateEvent1.isMultipleDays) {
+        return multipleDayAndSingleDayTimeCollision(dateEvent2, dateEvent1);
+    }
+    else if (dateEvent2.isMultipleDays) {
+        return multipleDayAndSingleDayTimeCollision(dateEvent1, dateEvent2);
+    }
     return willDatesCollide(dateEvent1, dateEvent2);
+}
+function multipleDayAndSingleDayTimeCollision(singleDayEvent, multipleDayEvent) {
+    var nextDayEvent = addDayToDateEvent(__assign({}, singleDayEvent));
+    return willDatesCollide(singleDayEvent, multipleDayEvent) || willDatesCollide(multipleDayEvent, nextDayEvent);
 }
 function convertTimeToMoment(time) {
     return moment$2(time, TIME_WITH_TIMEZONE_FORMAT);
@@ -37,16 +67,12 @@ function convertTimeEventToDateEvent(_a) {
     var startTimeMoment = convertTimeToMoment(start);
     var endTimeMoment = convertTimeToMoment(end);
     var startDate = convertTimeToDate(start);
-    var endDate;
-    if (!startTimeMoment.isBefore(endTimeMoment)) {
-        endDate = convertTimeToDate(end, true);
-    }
-    else {
-        endDate = convertTimeToDate(end);
-    }
+    var isMultipleDays = startTimeMoment.isAfter(endTimeMoment);
+    var endDate = convertTimeToDate(end, isMultipleDays);
     return {
         start: startDate,
-        end: endDate
+        end: endDate,
+        isMultipleDays: isMultipleDays
     };
 }
 function convertTimeToDate(time, addDay) {
@@ -64,6 +90,8 @@ exports.convertStringToNumber = convertStringToNumber;
 exports.willDatesCollide = willDatesCollide;
 exports.isInDateRange = isInDateRange;
 exports.getInitialMomentDate = getInitialMomentDate;
+exports.addOneDay = addOneDay;
+exports.addDayToDateEvent = addDayToDateEvent;
 exports.convertTimeEventToDateEvent = convertTimeEventToDateEvent;
 exports.convertTimeToDate = convertTimeToDate;
 exports.TIME_WITH_TIMEZONE_FORMAT = TIME_WITH_TIMEZONE_FORMAT;

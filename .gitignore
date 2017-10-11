@@ -9,3 +9,4 @@ compiled
 .awcache
 .out-tsc
 docs
+dist/docs

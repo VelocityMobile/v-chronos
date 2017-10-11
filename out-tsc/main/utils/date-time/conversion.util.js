@@ -1,4 +1,4 @@
-import * as moment from 'moment-timezone';
+import * as moment from 'moment';
 import { convertTimeToMoment } from '../time/time.util';
 import { getInitialMomentDate } from '../date/date.util';
 export function convertTimeEventToDateEvent(_a) {

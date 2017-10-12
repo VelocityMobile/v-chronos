@@ -8,7 +8,7 @@ const libraryName = "v-chronos"
 export default {
   input: 'out-tsc/main/v-chronos.js',
   output: [
-    { file: pkg.main, name: 'ts-lib-template', format: "umd" },
+    { file: pkg.main, name: libraryName, format: "umd" },
     { file: pkg.module, format: "es" }
   ],
   sourcemap: true,
@@ -18,7 +18,11 @@ export default {
     include: "out-tsc/main/**"
   },
   plugins: [
-    commonjs(),
+    commonjs({
+      include: [
+        'node_modules/moment/**'
+      ]
+    }),
     resolve(),
     sourceMaps()
   ]
